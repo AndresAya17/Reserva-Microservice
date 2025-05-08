@@ -3,6 +3,7 @@ package com.hotel_service.Controller;
 import com.hotel_service.Model.Hotel;
 import com.hotel_service.Model.Piso;
 import com.hotel_service.service.IPisoService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,7 @@ public class PisoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> save(@RequestBody Piso piso, BindingResult bindingResult) {
+    public ResponseEntity<?> save(@Valid @RequestBody Piso piso, BindingResult bindingResult) {
         try {
             Map<String, Object> response = new HashMap<>();
             if (bindingResult.hasFieldErrors()) {

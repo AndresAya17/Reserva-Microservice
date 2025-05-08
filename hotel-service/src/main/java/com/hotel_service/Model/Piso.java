@@ -2,6 +2,7 @@ package com.hotel_service.Model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +20,10 @@ public class Piso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "El nombre no puede estar vacio.")
     @Column(nullable = false)
     private String Nombre;
+    @NotBlank(message = "La descripcion no puede estar vacio.")
     @Column(nullable = false)
     private String Descripcion;
 
