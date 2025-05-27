@@ -5,7 +5,6 @@ import com.hotel_service.Model.Dto.HabitacionDto;
 import com.hotel_service.Model.Dto.HotelDto;
 import com.hotel_service.Model.Dto.PisoDto;
 import com.hotel_service.Model.Habitacion;
-import com.hotel_service.Model.Piso;
 import com.hotel_service.Repository.IHabitacionRepository;
 import com.hotel_service.service.IHabitacionService;
 import lombok.RequiredArgsConstructor;
