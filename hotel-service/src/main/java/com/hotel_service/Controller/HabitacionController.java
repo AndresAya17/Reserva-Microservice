@@ -1,5 +1,6 @@
 package com.hotel_service.Controller;
 
+import com.hotel_service.Model.Enum.EstadoHabitacion;
 import com.hotel_service.Model.Habitacion;
 import com.hotel_service.Model.Piso;
 import com.hotel_service.service.IHabitacionService;
@@ -51,8 +52,13 @@ public class HabitacionController {
         return ResponseEntity.ok(habitacionService.findById(id));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id){
         habitacionService.deleteById(id);
+    }
+
+    @PatchMapping("/{id}")
+    public void setEstado(@PathVariable Long id, @RequestBody EstadoHabitacion nuevoEstado) {
+        habitacionService.setEstado(id,nuevoEstado);
     }
 }

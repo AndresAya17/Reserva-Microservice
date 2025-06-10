@@ -4,6 +4,7 @@ import com.hotel_service.Exceptions.UserNotFoundException;
 import com.hotel_service.Model.Dto.HabitacionDto;
 import com.hotel_service.Model.Dto.HotelDto;
 import com.hotel_service.Model.Dto.PisoDto;
+import com.hotel_service.Model.Enum.EstadoHabitacion;
 import com.hotel_service.Model.Habitacion;
 import com.hotel_service.Repository.IHabitacionRepository;
 import com.hotel_service.service.IHabitacionService;
@@ -50,5 +51,12 @@ public class IHabitacionImpl implements IHabitacionService {
             throw new UserNotFoundException(id);
         }
         habitacionRepository.deleteById(id);
+    }
+
+    @Override
+    public void setEstado(Long id, EstadoHabitacion nuevoEstado) {
+        Habitacion habitacion = habitacionRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
+        habitacion.setEstado(nuevoEstado);
+        habitacionRepository.save(habitacion);
     }
 }

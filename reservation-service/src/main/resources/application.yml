@@ -13,3 +13,13 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 server:
   port: 8081
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
