@@ -1,0 +1,26 @@
+#spring.application.name=user-service
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3309/usuario
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+server:
+  port: 8082
+#feign:
+#  httpclient:
+#    enabled: false
+#  okhttp:
+#    enabled: false
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 5000
+#        readTimeout: 5000
